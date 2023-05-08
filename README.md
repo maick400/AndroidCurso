@@ -1,5 +1,5 @@
 # AndroidCurso
-Este es el curso de 13 horas del kotlin del canal de "Programadores Android by AristiDevs"
+Este es el curso de 13 horas del kotlin del canal de "Programadores Android by AristiDevs" junto con los conceptos brindados en Platzi del "Curso básico de Kotlin" 
 
 <h2 align=center>
 <b>Variables
@@ -257,6 +257,50 @@ Process finished with exit code 0
 
 ```
 
+<h2 align="center"> <b> Listas  </h2>
+
+***
+## Listas inmutables 
+Son aquellas que contienen elementos que no pueden ser modificadas a futuro, es decir, no se puede agregar ni eliminar elementos en ella. 
+
+## Listas mutables
+Este tipo de listas si admiten la agregacion. modificación y eliminación de sus elementos como se lo puede apreciar en el siguiente código: 
+code 
+
+```kotlin 
+    var emptyList = mutableListOf<Int>()
+    println(emptyList)
+    //agregar elementos
+    emptyList.add(12)
+    emptyList.add(2)
+    emptyList.add(4)
+    println(emptyList)
+
+    //modifica elementos
+    emptyList[0] = 55
+    println(emptyList)
+
+    //ELiminar elementos  elementos
+    emptyList.remove(4)
+    println(emptyList)
+
+```
+
+output
+```concsole  
+[]
+[12, 2, 4]
+[55, 2, 4]
+[55, 2]
+
+Process finished with exit code 0
+    
+```
+
+
+
+
+
 
 <h2 align="center"> <b> map y filter  </h2>
 
@@ -394,12 +438,6 @@ output
 0
 ```
 Si no utilizaríamos el operador elvis para esta función, sin duda tendríamos una excepción de tipo null
-
-
-
-
-
-
 
 
 
