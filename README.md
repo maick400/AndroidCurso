@@ -303,7 +303,7 @@ Process finished with exit code 0
 
 
 
-<h2 align="center"> <b>Null Safety (?) </h2>
+<h2 align="center"> <b>Null Safety <span style="color: red;">?</span> </h2>
 
 ***
 Es uno de los valores primordiales en kotlin, puesto que el lenguaje de programación de forma predeterminada, no permite valores nullos, como lo podemos visualizar en la siguiente codifiacación: 
@@ -336,10 +336,66 @@ null
 ```
 
 
-<h2 align="center"> <b>double bang(!!) </h2>
+<h2 align="center"> <b>double bang <span style="color: red;">!!</span> </h2>
 
 ***
 cuando una una variable es declarada, y se tiene la completa seguridad de que no será nula en ninguna circunstancia, se utilizar el duble bang, para poder acceder a esta o así mismo a sus propiedades, sin embargo, la utilización de este operador se considerado una mala práctica, por lo que no es muy recomendado. 
+
+
+Cuando tenemos un valor dentro de la variable o propiedad de la misma, no existirá ningún error, tal cual lo podemos apreciar a continuación:
+
+code 
+```kotlin 
+    var username:String? = "Miguel"
+    println(username!!.length)
+```
+output
+```console
+6
+
+Process finished with exit code 0
+
+```
+
+Por otra parte, ¿Qué pasaría si el valor de la variables es null?
+
+code 
+```kotlin 
+var username:String? = null
+println(username!!.length)
+```
+output
+```console
+Exception in thread "main" java.lang.NullPointerException
+	at com.maick400.andriodmaster.VariableKt.main(variable.kt:28)
+	at com.maick400.andriodmaster.VariableKt.main(variable.kt)
+
+```
+El acceder a una propiedad cuyo valor es nulo, precederá de una excepción, debido a la naturaleza de kotlin. Para ello, existe el operador `elvis`, el cual nos permite asignar valores predeterminados, en caso de que la variable sea nulla
+
+
+ 
+
+<h2 align="center"> <b>Operador elvis  <span style="color: red;">?:</span>  </h2>
+
+***
+
+elvis operator (Llamado asi por el peinado de Elvis Presley y comparado con el signo de interrogación), es utilizado para minimizar los errores en la utilización de variable con contenido null, el cual asigna una valor predeterminado en caso de que la variable y/o propiedad de la misma, contenga un elemento `null`
+
+code 
+```kotlin 
+var username:String? = null
+var usernameLong:Int = username?.length?:0
+
+println(usernameLong)
+```
+output
+```console
+0
+```
+Si no utilizaríamos el operador elvis para esta función, sin duda tendríamos una excepción de tipo null
+
+
 
 
 

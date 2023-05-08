@@ -24,8 +24,31 @@ fun main(){
 //    println("fruits len: ${fruitsLongs.size}")
 
 
-    var username:String? = null
-    println(username?.length)
+//    var username:String? = null
+//    var usernameLong:Int = username?.length?:0
+//    println(usernameLong)
+
+
+
+    var emptyList = mutableListOf<Int>()
+    println(emptyList)
+    //agregar elementos
+    emptyList.add(12)
+    emptyList.add(2)
+    emptyList.add(4)
+    println(emptyList)
+
+    //modifica elementos
+    emptyList[0] = 55
+    println(emptyList)
+
+    //ELiminar elementos  elementos
+    emptyList.remove(4)
+    println(emptyList)
+
+
+
+
 
 
 
